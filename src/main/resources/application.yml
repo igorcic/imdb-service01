@@ -1,0 +1,19 @@
+
+
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/imdb
+        username: ioasys
+        password: ioasys
+
+jpa:
+    hibernate:
+        ddlAuto: validate
+    openInView: true
+    properties:
+        hibernate:
+        formatSql: true
+        jdbc:
+            lob:
+                nonContextualCreation: true
+        showSql: true

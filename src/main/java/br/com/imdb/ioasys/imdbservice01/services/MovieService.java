@@ -25,7 +25,7 @@ public class MovieService {
         return movieRepository.findAll();
     }
     public Movie update(Movie update){
-        var movie = get(update.getMovieId());
+        var movie = get(update.getId());
         BeanUtils.copyProperties(update,movie);
         return movie;
     }
