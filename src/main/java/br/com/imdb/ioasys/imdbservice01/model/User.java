@@ -22,7 +22,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID userId;
+    private Long userId;
 
     @Column(nullable = false)
     private String fullName;
@@ -40,9 +40,6 @@ public class User {
     private UserStatus status;
 
 
-
-    @ToString.Exclude
-    private Set<Role> roles = new HashSet<>();
 
     @Column(nullable = false)
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", shape = JsonFormat.Shape.STRING)

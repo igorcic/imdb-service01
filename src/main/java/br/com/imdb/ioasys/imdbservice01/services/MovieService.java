@@ -5,9 +5,13 @@ import br.com.imdb.ioasys.imdbservice01.model.Movie;
 import br.com.imdb.ioasys.imdbservice01.repository.MovieRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -19,7 +23,9 @@ public class MovieService {
 
     }
     public Movie get(Long id){
+
         return movieRepository.getReferenceById(id);
+
     }
     public List<Movie> getAll(){
         return movieRepository.findAll();
@@ -29,6 +35,8 @@ public class MovieService {
         BeanUtils.copyProperties(update,movie);
         return movie;
     }
+
+
     public void delete(Movie movie){
         movieRepository.delete(movie);
     }
